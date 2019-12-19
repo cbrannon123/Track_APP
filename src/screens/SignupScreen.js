@@ -17,25 +17,26 @@ const SignupScreen = ({ navigation }) => {
             <Spacer>
                 <Text h3>Sign Up for Tracker</Text>
             </Spacer>
-            <Spacer/>
-            <Input 
+            <Spacer />
+            <Input
                 label="Email"
                 value={email}
-                onChangeText={setEmail}  
+                onChangeText={setEmail}
                 autoCapitalize="none"
                 autoCorrect={false}
             />
             <Spacer />
-            <Input 
-                label="Password" 
+            <Input
+                label="Password"
                 value={password}
                 onChangeText={setPassword}
                 autoCapitalize="none"
                 autoCorrect={false}
                 secureTextEntry
             />
+            {state.errorMessage ? <Text style={styles.errorMessage}>{state.errorMessage}</Text> : null}
             <Spacer>
-                <Button title="Sign Up" onPress={() => signup({ email, password})} />
+                <Button title="Sign Up" onPress={() => signup({ email, password })} />
             </Spacer>
         </View>
     )
@@ -52,6 +53,13 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         marginBottom: 250
+    },
+    errorMessage : {
+        fontSize: 16,
+        color: 'red',
+        marginLeft: 15,
+        marginTop: 15
+        
     }
 });
 
