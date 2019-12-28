@@ -29,7 +29,6 @@ const signup = (dispatch) => async ({ email, password }) => {
     }
 };
 
-
 const signin = (dispatch) => {
     return ({ email, password }) => {
 

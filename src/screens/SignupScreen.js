@@ -51,7 +51,7 @@ SignupScreen.navigationOptions = () => {
     return {
         header: null
     };
-};
+};   
 
 const styles = StyleSheet.create({
     container: {
