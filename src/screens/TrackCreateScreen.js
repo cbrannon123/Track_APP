@@ -1,3 +1,4 @@
+import '../_mockLocation';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Text } from 'react-native-elements';
@@ -11,6 +12,7 @@ const TrackCreateScreen = () => {
     const startWatching = async () => {
         try {
             await requestPermissionsAsync();
+
         } catch (e) {
             setErr(e);
         }
