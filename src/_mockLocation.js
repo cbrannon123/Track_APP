@@ -4,7 +4,7 @@ const tenMetersWithDegrees = 0.0001;
 
 const getLocation = increment => {
     return {
-        timeStamp: 100000,
+        timestamp: 100000000,
         coords: {
             speed: 0,
             heading: 0,
@@ -12,7 +12,8 @@ const getLocation = increment => {
             altitudeAccuracy: 5,
             altitude: 5,
             longitude: -122.0312186 + increment * tenMetersWithDegrees,
-            latitude: 37.33233141 + increment * tenMetersWithDegrees
+            latitude: 37.33233141 + increment * tenMetersWithDegrees,
+           
         }
     };
 };
@@ -21,7 +22,7 @@ let counter = 0;
 setInterval(() => {
     Location.EventEmitter.emit('Expo.locationChanged', {
         watchId: Location._getCurrentWatchId(),
-        Location: getLocation(counter)
+        location: getLocation(counter)
     });
     counter++;
 }, 1000);
